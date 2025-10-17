@@ -18,7 +18,7 @@ const app = express();
 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL || "*"
+    ? ["https://zerodha-frontend-latest.onrender.com", "https://zerodha-dashboard-latest.onrender.com"]
     : "http://localhost:3000",
   credentials: true
 }));
