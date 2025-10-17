@@ -1,6 +1,10 @@
 import React from "react";
 
 function OpenAccount() {
+  const handleRedirectToDashboard = () => {
+    window.location.href = process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000";
+  };
+
   return (
     <div className="container p-5 mb-5">
       <div className="row text-center">
@@ -10,6 +14,7 @@ function OpenAccount() {
           F&O trades.
         </p>
         <button
+          onClick={handleRedirectToDashboard}
           className="p-2 btn btn-primary fs-5 mb-5"
           style={{ width: "20%", margin: "0 auto" }}
         >

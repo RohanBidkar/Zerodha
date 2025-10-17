@@ -216,6 +216,11 @@ const isAuthenticated = (req, res, next) => {
 //   res.send("Done!");
 // });
 
+// Health check endpoint
+app.get("/", (req, res) => {
+  res.json({ status: "Server is running" });
+});
+
 // Auth routes
 app.post("/signup", (req, res) => {
   const { username, password } = req.body;

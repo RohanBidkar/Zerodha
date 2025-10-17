@@ -55,7 +55,7 @@ function Navbar() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="http://localhost:3000" target="_blank">
+                <a class="nav-link active" href={process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000"} target="_blank">
                   Dashboard
                 </a>
               </li>
