@@ -1,0 +1,8 @@
+{
+  "name": "zerodha-clone",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "cd Zerodha-main/backend && npm install && cd ../dashboard && npm install && cd ../frontend && npm install",
+    "build": "cd Zerodha-main/dashboard && npm run build && cd ../frontend && npm run build"
+  }
+}

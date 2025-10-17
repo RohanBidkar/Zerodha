@@ -1,0 +1,87 @@
+@media (max-width: 768px) {
+  .market-indices {
+    display: none !important;
+  }
+  
+  .menus {
+    display: none !important;
+  }
+  
+  .menu-container {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  
+  .mobile-dropdown {
+    display: block !important;
+  }
+  
+  .topbar-logo {
+    display: flex !important;
+  }
+  
+  .order-table {
+    overflow-x: auto;
+  }
+  
+  .order-table table {
+    min-width: 600px;
+  }
+  
+  .dashboard-container {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  
+  .watchlist-container {
+    flex-basis: auto !important;
+    width: 100% !important;
+    height: calc(100vh - 120px) !important;
+    order: 1;
+  }
+  
+  .content {
+    display: none !important;
+  }
+  
+  .content.mobile-show {
+    display: block !important;
+    flex-basis: auto !important;
+    width: 100% !important;
+    height: calc(100vh - 120px) !important;
+    padding: 1rem 0.5rem;
+    padding-bottom: 5rem;
+    order: 1;
+    overflow-y: auto;
+  }
+  
+  .dashboard-container:has(.content.mobile-show) .watchlist-container {
+    display: none !important;
+  }
+  
+  .mobile-nav {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    font-size: 0.6rem;
+  }
+  
+  .profile .username {
+    display: none;
+  }
+  
+  .order-table th,
+  .order-table td {
+    padding: 8px 5px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: zerodha-backend
+    env: node
+    buildCommand: cd Zerodha-main/backend && npm install
+    startCommand: cd Zerodha-main/backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: zerodha-dashboard
+    env: static
+    buildCommand: cd Zerodha-main/dashboard && npm install && npm run build
+    staticPublishPath: Zerodha-main/dashboard/build
+
+  - type: web
+    name: zerodha-frontend
+    env: static
+    buildCommand: cd Zerodha-main/frontend && npm install && npm run build
+    staticPublishPath: Zerodha-main/frontend/build
