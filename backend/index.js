@@ -17,9 +17,7 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ["https://zerodha-frontend-latest.onrender.com", "https://zerodha-dashboard-latest.onrender.com"]
-    : "http://localhost:3000",
+  origin: true,
   credentials: true
 }));
 app.use(bodyParser.json());
@@ -238,8 +236,16 @@ app.post("/signup", (req, res) => {
   });
 });
 
-app.post("/login", passport.authenticate("local"), (req, res) => {
-  res.json({ success: true, user: req.user });
+app.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return res.status(500).json({ error: "Server error" });
+    if (!user) return res.status(401).json({ error: "Invalid credentials" });
+    
+    req.login(user, (err) => {
+      if (err) return res.status(500).json({ error: "Login failed" });
+      res.json({ success: true, user: req.user });
+    });
+  })(req, res, next);
 });
 
 app.post("/logout", (req, res) => {
