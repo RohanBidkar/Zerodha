@@ -1,5 +1,5 @@
 import React from "react";
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -30,29 +30,29 @@ function Navbar() {
           <form class="d-flex" role="search">
             <ul class="navbar-nav mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="signup">
+                <a class="nav-link active" aria-current="page" href={process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000"} target="_blank" rel="noreferrer">
                   Signup
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="about">
+                <Link class="nav-link active" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="product">
+                <Link class="nav-link active" to="/product">
                   Product
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="pricing">
+                <Link class="nav-link active" to="/pricing">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="support">
+                <Link class="nav-link active" to="/support">
                   Support
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href={process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000"} target="_blank">
