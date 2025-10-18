@@ -16,6 +16,8 @@ code {
     monospace;
 }
 
+@import './responsive.css';
+
 .nav-link{
   margin-left: 40px;
 }

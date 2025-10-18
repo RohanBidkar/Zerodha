@@ -1,0 +1,45 @@
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+  
+  .row {
+    margin: 0 !important;
+  }
+  
+  .col-6 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
+  .navbar-nav {
+    flex-direction: column !important;
+  }
+  
+  .nav-item {
+    margin: 0.2rem 0 !important;
+  }
+  
+  button {
+    width: auto !important;
+    min-width: 120px !important;
+  }
+  
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .fs-3, .fs-5 {
+    font-size: 1.2rem !important;
+  }
+  
+  .p-5 {
+    padding: 1rem !important;
+  }
+  
+  .m-5 {
+    margin: 1rem !important;
+  }
+}
